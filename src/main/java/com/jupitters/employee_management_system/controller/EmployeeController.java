@@ -40,4 +40,8 @@ public class EmployeeController {
         model.addAttribute("employee", employee);
         return "update_employee";
     }
+    
+    public String deleteEmployee(@PathVariable Long id){
+
+    }
 }
