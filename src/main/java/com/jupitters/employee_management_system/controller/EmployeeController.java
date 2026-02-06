@@ -32,4 +32,10 @@ public class EmployeeController {
         employeeService.saveEmployee(employee);
         return "redirect:/";
     }
+
+    public String showFormForUpdate(Model model, Long id){
+        Employee employee = employeeService.getEmployeeById(id);
+        model.addAttribute("employee", employee);
+        return "update_employee;"
+    }
 }
