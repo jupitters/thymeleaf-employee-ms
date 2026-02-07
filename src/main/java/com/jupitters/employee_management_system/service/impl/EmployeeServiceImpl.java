@@ -24,5 +24,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeRepository.save(employee);
     }
 
+    @Override
+    public Employee getEmployeeById(Long id) {
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found!"));
+        return employee;
+    }
 
+    @Override
+    public void deleteEmployee(Long id) {
+        this.employeeRepository.deleteById(id);
+    }
 }
