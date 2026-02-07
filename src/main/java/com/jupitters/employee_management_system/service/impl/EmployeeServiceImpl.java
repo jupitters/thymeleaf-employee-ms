@@ -14,15 +14,7 @@ import java.util.Optional;
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
-    @Override
-    public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll()     ;
-    }
 
-    @Override
-    public void saveEmployee(Employee employee) {
-        this.employeeRepository.save(employee);
-    }
 
     @Override
     public Employee getEmployeeById(Long id) {
