@@ -15,7 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
+    @GetMapping("/")
+    public String viewHomePage(Model model){
+        model.addAttribute("listEmployees", employeeService.getAllEmployees());
+        return "index";
+    }
 
+    @GetMapping("/newEmployeeForm")
+    public String newEmployeeForm(Model model){
+        Employee employee = new Employee();
+        model.addAttribute("employee", employee);
+        return "new_employee";
+    }
 
     @PostMapping("/saveEmployee")
     public String saveEmployee(@ModelAttribute("employee") Employee employee, Model model){
