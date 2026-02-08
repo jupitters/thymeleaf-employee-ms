@@ -28,11 +28,7 @@ public class EmployeeController {
         return "new_employee";
     }
 
-    @PostMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee, Model model){
-        employeeService.saveEmployee(employee);
-        return "redirect:/";
-    }
+
 
     @GetMapping("/showFormForUpdate/{id}")
     public String showFormForUpdate(Model model, @PathVariable Long id){
