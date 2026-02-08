@@ -21,7 +21,12 @@ public class EmployeeController {
         return "index";
     }
 
-
+    @GetMapping("/newEmployeeForm")
+    public String newEmployeeForm(Model model){
+        Employee employee = new Employee();
+        model.addAttribute("employee", employee);
+        return "new_employee";
+    }
 
     @PostMapping("/saveEmployee")
     public String saveEmployee(@ModelAttribute("employee") Employee employee, Model model){
