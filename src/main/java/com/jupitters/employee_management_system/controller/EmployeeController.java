@@ -15,11 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    @GetMapping("/")
-    public String viewHomePage(Model model){
-        model.addAttribute("listEmployees", employeeService.getAllEmployees());
-        return "index";
-    }
+
 
     @GetMapping("/newEmployeeForm")
     public String newEmployeeForm(Model model){
